@@ -44,7 +44,7 @@
 				$uri		      = $_SERVER['REQUEST_URI'];
 				$fname         = 'submissions/'.uniqid($username.'.type1.', true);
 
-				if (!empty($project) && !empty($configuration)  && !empty($generator) && !empty($nevents)  && !empty($jobs) && !empty($fields)&& !empty($bkmerging)) {
+				if (!empty($project) && !empty($configuration) && !empty($fields)&& !empty($bkmerging) && !empty($generator) && !empty($nevents) && !empty($jobs) ) {
 					$fp = fopen($fname, 'w');
 					fwrite($fp, 'submission type: 1'.PHP_EOL);
 					fwrite($fp, 'username: '.$username.PHP_EOL);

@@ -42,13 +42,13 @@
 				$username      = $_SERVER['PHP_AUTH_USER'];
 				$client_ip     = $_SERVER['REMOTE_ADDR'];
 				$uri		      = $_SERVER['REQUEST_URI'];
-				$fname         = 'submissions/'.uniqid($username.'.type1.', true);
+				$fname         = 'submissions/'.uniqid($username.'.type2.', true);
 
-				if (!empty($project) && !empty($configuration)  && !empty($lundFiles) && !empty($fields)&& !empty($bkmerging)) {
+				if (!empty($project) && !empty($configuration) && !empty($fields)&& !empty($bkmerging) && !empty($lundFiles) ) {
 					$fp = fopen($fname, 'w');
 					fwrite($fp, 'submission type: 2'.PHP_EOL);
 					fwrite($fp, 'username: '.$username.PHP_EOL);
-					fwrite($fp, 'project:  '.$project.PHP_EOL);
+					fwrite($fp, 'project: '.$project.PHP_EOL);
 					fwrite($fp, 'configuration: '.$configuration.PHP_EOL);
 					fwrite($fp, 'generator: '.$lundFiles.PHP_EOL);
 
@@ -73,7 +73,7 @@
 					}
 				}
 				else {
-					echo "All field are required";
+					echo("<h2> All fields are required </h2>");
 					die();
 				}
 			?>
