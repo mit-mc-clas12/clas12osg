@@ -42,14 +42,18 @@
 				$username      = $_SERVER['PHP_AUTH_USER'];
 				$client_ip     = $_SERVER['REMOTE_ADDR'];
 				$uri		      = $_SERVER['REQUEST_URI'];
+				$fname         = 'submissions/'.uniqid($username.'.type1.', true);
 
 				if (!empty($project) && !empty($configuration)  && !empty($lundFiles) && !empty($fields)&& !empty($bkmerging)) {
-					$fp = fopen('scard_type2.txt', 'w');
+					$fp = fopen($fname, 'w');
 					fwrite($fp, 'submission type: 2'.PHP_EOL);
 					fwrite($fp, 'username: '.$username.PHP_EOL);
 					fwrite($fp, 'project:  '.$project.PHP_EOL);
 					fwrite($fp, 'configuration: '.$configuration.PHP_EOL);
 					fwrite($fp, 'generator: '.$lundFiles.PHP_EOL);
+
+
+
 					fwrite($fp, 'client_ip: '.$client_ip.PHP_EOL);
 					fwrite($fp, 'dstOUT: yes'.PHP_EOL);
 					fwrite($fp, 'fields: '.$fields.PHP_EOL);

@@ -42,10 +42,10 @@
             $username      = $_SERVER['PHP_AUTH_USER'];
 				$client_ip     = $_SERVER['REMOTE_ADDR'];
 				$uri		      = $_SERVER['REQUEST_URI'];
-				$fname         = tempname('', 'scard_type1');
+				$fname         = 'submissions/'.uniqid($username.'.type1.', true);
 
 				if (!empty($project) && !empty($configuration)  && !empty($generator) && !empty($nevents)  && !empty($jobs) && !empty($fields)&& !empty($bkmerging)) {
-					$fp = fopen($fname.'.txt', 'w');
+					$fp = fopen($fname, 'w');
 					fwrite($fp, 'submission type: 1'.PHP_EOL);
 					fwrite($fp, 'username: '.$username.PHP_EOL);
 					fwrite($fp, 'project: '.$project.PHP_EOL);
@@ -64,7 +64,7 @@
 						fwrite($fp, 'submission: production'.PHP_EOL);
 					}
 					fclose($fp);
-					if (strpos($uri, 'test/web_interface') !== false) {
+					if (strpos($uri, 'test/clas12osg/webPortal') !== false) {
 						$command = escapeshellcmd('../SubMit/client/src/SubMit.py --test_database -u '.$username.' scard_type1.txt');
 						$output = shell_exec($command);
 					} else {

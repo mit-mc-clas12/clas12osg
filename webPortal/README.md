@@ -1,7 +1,8 @@
 # Installation tips
 
-- make sure the directory "webPortal" is writable by "gemc": 
+- make sure the directory "webPortal" is writable by "gemc" and the directory submissions is there:
  `chmod g+w -R clas12osg/webPortal/`
+  `mkdir -p clas12osg/webPortal/submissions`
 
 
 
