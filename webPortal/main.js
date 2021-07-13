@@ -21,7 +21,7 @@ function myFunction() {
 }
 
 var is_test = window.location.pathname.includes("test");
-var title = "CLAS12 Monte-Carlo Job Submission Portal";
+var title = "CLAS12 Monte-Carlo Simulations OSG Portal";
 if (is_test){
 	title = title + " (Test Version)";
 }

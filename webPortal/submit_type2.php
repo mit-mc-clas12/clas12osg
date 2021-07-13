@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>CLAS12 Monte-Carlo Job Submission Portal</title>
+		<title>CLAS12 Monte-Carlo Simulations OSG Portal</title>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
@@ -30,23 +30,23 @@
 		<div class="w3-center">
 			
 			<?php
-				$project     = 'CLAS12';
-				$configuration      = $_POST['configuration'];
-				$lundFiles   = $_POST['lundFiles'];
-				$username    = $_SERVER['PHP_AUTH_USER'];
-				$client_ip   = $_SERVER['REMOTE_ADDR'];
-				$fields		 = $_POST['fields'];
-				$bkmerging = $_POST['bkmerging'];
-				$uri		 = $_SERVER['REQUEST_URI'];
-				
-				function yesorno($cond){
-					$val = "no";
-					if($cond) $val="yes";
-					return $val;
-				}
+				$project       = 'CLAS12';
+				$configuration = $_POST['configuration'];
+				$lundFiles     = $_POST['lundFiles'];
+
+
+
+
+				$fields		   = $_POST['fields'];
+				$bkmerging     = $_POST['bkmerging'];
+				$username      = $_SERVER['PHP_AUTH_USER'];
+				$client_ip     = $_SERVER['REMOTE_ADDR'];
+				$uri		      = $_SERVER['REQUEST_URI'];
 
 				if (!empty($project) && !empty($configuration)  && !empty($lundFiles) && !empty($fields)&& !empty($bkmerging)) {
 					$fp = fopen('scard_type2.txt', 'w');
+					fwrite($fp, 'type 2 submission'.PHP_EOL);
+					fwrite($fp, 'username: '.$username.PHP_EOL);
 					fwrite($fp, 'project:  '.$project.PHP_EOL);
 					fwrite($fp, 'configuration: '.$configuration.PHP_EOL);
 					fwrite($fp, 'generator: '.$lundFiles.PHP_EOL);
@@ -60,7 +60,7 @@
 						fwrite($fp, 'submission: production'.PHP_EOL);
 					}
 					fclose($fp);
-					if (strpos($uri, 'test/web_interface') !== false) {
+					if (strpos($uri, 'test/clas12osg/webPortal') !== false) {
 						$command = escapeshellcmd('../SubMit/client/src/SubMit.py --test_database -u '.$username.' scard_type2.txt');
 						$output = shell_exec($command);
 					} else {

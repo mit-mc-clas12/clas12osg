@@ -1,3 +1,14 @@
+# Installation tips
+
+- make sure the directory "webPortal" is writable by "gemc": 
+ `chmod g+w -R clas12osg/webPortal/`
+
+
+
+
+
+
+
 # Some scripts for CLAS12 Monte-Carlo Job Submission Portal
 
 By Sangbaek
