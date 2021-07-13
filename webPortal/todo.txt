@@ -1,0 +1,2 @@
+- unify type 1 and type 2 in the portal
+- keep last 10 days history of submissions
