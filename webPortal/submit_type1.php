@@ -58,7 +58,7 @@
 					fwrite($fp, 'dstOUT: yes'.PHP_EOL);
 					fwrite($fp, 'fields: '.$fields.PHP_EOL);
 					fwrite($fp, 'bkmerging: '.$bkmerging.PHP_EOL);
-					if (strpos($uri, 'test/web_interface') !== false) {
+					if (strpos($uri, 'test/clas12osg/webPortal') !== false) {
 						fwrite($fp, 'submission: devel'.PHP_EOL);
 					} else {
 						fwrite($fp, 'submission: production'.PHP_EOL);
