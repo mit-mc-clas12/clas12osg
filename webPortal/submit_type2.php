@@ -45,7 +45,7 @@
 
 				if (!empty($project) && !empty($configuration)  && !empty($lundFiles) && !empty($fields)&& !empty($bkmerging)) {
 					$fp = fopen('scard_type2.txt', 'w');
-					fwrite($fp, 'type 2 submission'.PHP_EOL);
+					fwrite($fp, 'submission type: 2'.PHP_EOL);
 					fwrite($fp, 'username: '.$username.PHP_EOL);
 					fwrite($fp, 'project:  '.$project.PHP_EOL);
 					fwrite($fp, 'configuration: '.$configuration.PHP_EOL);

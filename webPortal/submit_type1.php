@@ -42,10 +42,11 @@
             $username      = $_SERVER['PHP_AUTH_USER'];
 				$client_ip     = $_SERVER['REMOTE_ADDR'];
 				$uri		      = $_SERVER['REQUEST_URI'];
+				$fname         = tempname('', 'scard_type1');
 
 				if (!empty($project) && !empty($configuration)  && !empty($generator) && !empty($nevents)  && !empty($jobs) && !empty($fields)&& !empty($bkmerging)) {
-					$fp = fopen('scard_type1.txt', 'w');
-					fwrite($fp, 'type 1 submission'.PHP_EOL);
+					$fp = fopen($fname.'.txt', 'w');
+					fwrite($fp, 'submission type: 1'.PHP_EOL);
 					fwrite($fp, 'username: '.$username.PHP_EOL);
 					fwrite($fp, 'project: '.$project.PHP_EOL);
 					fwrite($fp, 'configuration: '.$configuration.PHP_EOL);
