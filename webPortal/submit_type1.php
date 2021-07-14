@@ -59,16 +59,16 @@
 					fwrite($fp, 'fields: '.$fields.PHP_EOL);
 					fwrite($fp, 'bkmerging: '.$bkmerging.PHP_EOL);
 					if (strpos($uri, 'test/clas12osg/webPortal') !== false) {
-						fwrite($fp, 'submission: devel'.PHP_EOL);
+						fwrite($fp, 'submissionType: test'.PHP_EOL);
 					} else {
-						fwrite($fp, 'submission: production'.PHP_EOL);
+						fwrite($fp, 'submissionType: production'.PHP_EOL);
 					}
 					fclose($fp);
 					if (strpos($uri, 'test/clas12osg/webPortal') !== false) {
-						$command = escapeshellcmd('../SubMit/client/src/SubMit.py --test_database -u '.$username.' scard_type1.txt');
+						$command = escapeshellcmd('../client/SubMit.py -t '.$fname);
 						$output = shell_exec($command);
 					} else {
-						$command = escapeshellcmd('../SubMit/client/src/SubMit.py -u '.$username.' scard_type1.txt');
+						$command = escapeshellcmd('../client/SubMit.py '.$fname);
 						$output = shell_exec($command);
 					}
 				}

@@ -1,27 +1,49 @@
-# GConfiguration class definition
-# The execution type (production or test) is set by the first, required parameter
-# The class can be constructed by:
-# 1. using the txt file produced by the portal
-# 2. using the mysql database
-class GConfiguration():
-	def __init__(self, txtFile: str):
+# SConfiguration class definition
+#
+class SConfiguration():
 
-	# open txt file
-	# read and fill:
+	# constructor from Steering Card (scard) text file
+	def __init__(self, scard):
 
-	self.project = CLAS12
+		self.raw_text       = None
+		self.submissionType = None
+		self.username       = None
+		self.project        = None
+		self.configuration  = None
+		self.generator      = None
+		self.genOptions     = None
+		self.nevents        = None
+		self.jobs           = None
+		self.client_ip      = None
+		self.fields         = None
+		self.torus          = None
+		self.solenoid       = None
+		self.bkmerging      = None
 
-	def from_database(mysqlDatabase) -> 'GConfiguration':
+		# open txt file, read and fill:
+#		file = Path(filename)
+#		if my_file.is_file():
+#			parseSCard(file)
+#
+#
+#	def parseSCard():
 
 
 
-class Book:
-    def __init__(self, txtConfiguration: str):
-        self.title = title
-        self.author = author
-        self.pages = pages
+#	def from_database(mysqlDatabase) -> 'GConfiguration':
 
-    @classmethod
-    def from_json(cls, book_as_json: str) -> 'Book':
-    	book = json.loads(book_as_json)
-    	return cls(title=book['title'], author=book['author'], pages=book['pages'])
+
+conf = SConfiguration('asd')
+print(conf.project)
+
+
+#class Book:
+#    def __init__(self, txtConfiguration: str):
+#        self.title = title
+#        self.author = author
+#        self.pages = pages
+#
+#    @classmethod
+#    def from_json(cls, book_as_json: str) -> 'Book':
+#    	book = json.loads(book_as_json)
+#    	return cls(title=book['title'], author=book['author'], pages=book['pages'])

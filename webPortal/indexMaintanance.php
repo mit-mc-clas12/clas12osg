@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>CLAS12 Monte-Carlo Job Submission Portal</title>
+		<title>CLAS12 Monte-Carlo Simulations OSG Portal</title>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
@@ -14,10 +14,11 @@
 	<body onload='osgLogtoTable();'>
 		<header class="w3-panel w3-container" id="myHeader">
 			<ul id="nav">
-				<li><a href="index.php">     Home</a></li>
+				<li><a href="index.php">     <h3><b>Home</b></h3></a></li>
 				<li><a href="about.html">    About</a></li>
-				<li><a href="disk.php">      Disk Usage</a></li>
+<!--				<li><a href="disk.php">      Disk Usage</a></li>-->
 				<li><a href="osgStats.html"> OSG Stats</a></li>
+				<li><a href="monitor.html">  Monitors</a></li>
 			</ul>
 
 			<div class="w3-center">
