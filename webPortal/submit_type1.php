@@ -46,7 +46,7 @@
 
 				if (!empty($project) && !empty($configuration) && !empty($fields)&& !empty($bkmerging) && !empty($generator) && !empty($nevents) && !empty($jobs) ) {
 					$fp = fopen($fname, 'w');
-					fwrite($fp, 'submission type: 1'.PHP_EOL);
+					fwrite($fp, 'type: 1'.PHP_EOL);
 					fwrite($fp, 'username: '.$username.PHP_EOL);
 					fwrite($fp, 'project: '.$project.PHP_EOL);
 					fwrite($fp, 'configuration: '.$configuration.PHP_EOL);
@@ -55,13 +55,12 @@
 					fwrite($fp, 'nevents: '.$nevents.PHP_EOL);
 					fwrite($fp, 'jobs: '.$jobs.PHP_EOL);
 					fwrite($fp, 'client_ip: '.$client_ip.PHP_EOL);
-					fwrite($fp, 'dstOUT: yes'.PHP_EOL);
 					fwrite($fp, 'fields: '.$fields.PHP_EOL);
 					fwrite($fp, 'bkmerging: '.$bkmerging.PHP_EOL);
 					if (strpos($uri, 'test/clas12osg/webPortal') !== false) {
-						fwrite($fp, 'submissionType: test'.PHP_EOL);
+						fwrite($fp, 'version: test'.PHP_EOL);
 					} else {
-						fwrite($fp, 'submissionType: production'.PHP_EOL);
+						fwrite($fp, 'version: production'.PHP_EOL);
 					}
 					fclose($fp);
 					if (strpos($uri, 'test/clas12osg/webPortal') !== false) {
@@ -76,7 +75,6 @@
 					echo("<h2> All fields are required </h2>");
 					die();
 				}
-
 			?>
 
 

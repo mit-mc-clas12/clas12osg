@@ -6,13 +6,14 @@ sys.path.append("..")
 sys.path.append(".")
 
 import options
-import SConfiguration
+from SConfiguration import SConfiguration
 
 # get command line arguments, log to screen
 args = options.get_args()
 print(args)
 
+
 # build SConfiguration from Steering Card (SCard) text file
-#submitConfiguration = SConfiguration()
+submitConfiguration = SConfiguration(args.scardFile)
 
 
