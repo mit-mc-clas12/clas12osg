@@ -44,7 +44,7 @@ class SConfiguration():
 		scard_lines = scardContent.split("\n")
 		for line in scard_lines:
 			if not line:
-				print('{0} parsed successfully'.format(self.file))
+				print('File {0} parsed successfully'.format(self.file))
 				break
 			pos_delimeter_colon = line.find(":")
 			key   =  line[:pos_delimeter_colon].strip()

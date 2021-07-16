@@ -16,4 +16,3 @@ print(args)
 # build SConfiguration from Steering Card (SCard) text file
 submitConfiguration = SConfiguration(args.scardFile)
 
-
