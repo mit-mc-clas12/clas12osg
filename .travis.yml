@@ -9,7 +9,7 @@ dist: focal
 # just master branch (verify branch name)
 branches:
   only:
-    - master
+    - main
 
 # Install dependencies
 addons:
@@ -24,15 +24,15 @@ env:
 
 # script to execute
 script:
- - ./makeDoxy.sh
+ - ./test/clientTest.sh
 
 # Generate and deploy documentation
 #
-deploy:
-  provider: pages
-  skip_cleanup: true
-  local_dir: html
-  github_token: $GH_REPO_TOKEN
-  on:
-    branch: master
+#deploy:
+#  provider: pages
+#  skip_cleanup: true
+#  local_dir: html
+#  github_token: $GH_REPO_TOKEN
+#  on:
+#    branch: master
 
